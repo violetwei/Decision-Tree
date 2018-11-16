@@ -97,7 +97,7 @@ public class Tester {
 
 
 
-    //if you want a more detailed test result change verbose to true
+    //if want a more detailed test result change verbose to true
 
     public static void testDecisionTree(boolean verbose)
     {
@@ -155,7 +155,7 @@ public class Tester {
         }
         System.out.println("Number of tests passed :" + (total-counter) + " out of "+total+" tests." );
     }
-     //if you want a more detailed test result change verbose to true
+     //if want a more detailed test result change verbose to true
     public static void testClassify(boolean verbose)
     {
         int counter=0;
@@ -199,7 +199,7 @@ public class Tester {
         //Testing the equals function
         testequals(true);
 
-        //if you want a more detailed test result change verbose to 'true'
+        //if want a more detailed test result change verbose to 'true'
         testDecisionTree(false);
         testClassify(false);
     }
