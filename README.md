@@ -16,7 +16,7 @@ The labelling of the object occurs when the path reaches a leaf node. Each leaf 
 
 Creating decision trees
 
-To classify objects using a decision tree, we first need to have a decision tree! Where do decision trees come from? In machine learning, one creates decision trees from a labelled data set. Each data item (datum) in the given labelled data set has well defined attributes x and label y. We refer to the data set that is used to create a decision tree as the training set. The basic algorithm for creating a decision tree using a training set is as follows. This is the algorithm that need to implement for fillDTNode()[method in DecisionTree.java.
+To classify objects using a decision tree, we first need to have a decision tree! Where do decision trees come from? In machine learning, one creates decision trees from a labelled data set. Each data item (datum) in the given labelled data set has well defined attributes x and label y. We refer to the data set that is used to create a decision tree as the training set. The basic algorithm for creating a decision tree using a training set is as follows. This is the algorithm that need to implement for fillDTNode()[method in DecisionTree.java].
 
 Datum.java
 
