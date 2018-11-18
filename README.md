@@ -30,7 +30,7 @@ if all the data items have the same label then
 
 create a leaf node with that class label and return it;
 
-elsecreate a “best” attribute test question; (see details later)
+else   create a “best” attribute test question; (see details later)
 
 create a new node and store the attribute test in that node, namely attribute and
 threshold;
@@ -44,7 +44,15 @@ newNode.child2 = MAKE DECISION TREE NODE(data2)
 
 return newNode
 
-end end
+end 
+
+end
+
+In the program, k is an argument of the decision tree construction minSizeDatalist.
+
+## 1.2 Classification using decision trees
+
+Once you have a decision tree, you can use it to classify new objects. This is called the testing phase. For the testing phase, one can use data items from the original data used for training (above) or one can use new data. Typically when a decision tree is used in practice, the test objects are unlabelled. In the surveillance example earlier, the system would test a new video and try to classify people as employees versus customers. Here the idea is that one does not know the correct class for each person. Let’s consider this general scenario now, that we are given a decision tree and the attributes of some new unlabelled test object. We will to use the decision tree to choose a label for the object. This is done by traversing the decision tree from the root to a leaf, as follows:
 
 ### Datum.java
 
