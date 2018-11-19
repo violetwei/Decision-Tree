@@ -86,6 +86,16 @@ A graphical representation of example of a data set looks like this. (For the gr
 
 Now that we have an idea of what the data are, let us return to the question of how to split the data into two sets when creating a node in a decision tree. What makes a ’good’ split? Intuitively, a split is good when the labels in each set are as ‘pure’ as possible, that is, each subset is dominated as much as possible by a single label (and the dominant label is differs between subsets). For example, suppose this is our data:
 
+![jietu20181119-124815](https://user-images.githubusercontent.com/31902939/48725207-71987100-ebf9-11e8-8203-8d55874a351e.jpg)
+
+Two of many possible splits we could make are shown in Fig. 3. Fig 3-a splits the data into two sets based on the test condition (x1 < 4), i.e. true or false. (By definition, the green symbol that falls on this line is considered to be in the right half since the inequality is strict.) This is a good split in that all data points for which the test condition is false have the same label (green) and all data points for which the test condition is true have the same label (red), and the labels differ in the two subsets.
+
+The split condition (x1 < 6) in Fig. 3-b is not as good, since the subset for which the condition is true contains datapoints of both labels.
+
+![jietu20181119-124827](https://user-images.githubusercontent.com/31902939/48725209-73facb00-ebf9-11e8-8d7d-7163cf871fc9.jpg)
+
+## 
+
 ### Datum.java
 
 This class holds the information of a single datapoint. It has two variables, x and y. x is an array containing the attributes and y contains the label.
