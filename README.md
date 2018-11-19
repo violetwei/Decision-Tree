@@ -80,6 +80,12 @@ For this assignment, the problem is to classify points based on their 2D positio
 
 A graphical representation of example of a data set looks like this. (For the graphs, the attribute value x[0], is represented as x1 and x[1] as x2.) For those who print out the document in color, the red symbols can be label 0 and the green symbols can be label 1. For those printing in black and white, the (red) disks are label 0 and the (green) ⇥’s are label 1.
 
+![jietu20181119-124209](https://user-images.githubusercontent.com/31902939/48724935-a5bf6200-ebf8-11e8-8cbb-60b5b76d3ac3.jpg)
+
+## 2.1 Finding a good split
+
+Now that we have an idea of what the data are, let us return to the question of how to split the data into two sets when creating a node in a decision tree. What makes a ’good’ split? Intuitively, a split is good when the labels in each set are as ‘pure’ as possible, that is, each subset is dominated as much as possible by a single label (and the dominant label is differs between subsets). For example, suppose this is our data:
+
 ### Datum.java
 
 This class holds the information of a single datapoint. It has two variables, x and y. x is an array containing the attributes and y contains the label.
