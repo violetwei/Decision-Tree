@@ -54,6 +54,32 @@ In the program, k is an argument of the decision tree construction minSizeDatali
 
 Once you have a decision tree, you can use it to classify new objects. This is called the testing phase. For the testing phase, one can use data items from the original data used for training (above) or one can use new data. Typically when a decision tree is used in practice, the test objects are unlabelled. In the surveillance example earlier, the system would test a new video and try to classify people as employees versus customers. Here the idea is that one does not know the correct class for each person. Let’s consider this general scenario now, that we are given a decision tree and the attributes of some new unlabelled test object. We will to use the decision tree to choose a label for the object. This is done by traversing the decision tree from the root to a leaf, as follows:
 
+Data: A decision tree,and an unlabelled data item(datum) to be classified 
+
+Result: (Predicted) classification label
+
+CLASSIFY(node, datum) {
+
+if node is a leaf then
+
+return the label of that node i.e. classify;
+
+else
+
+test the data item using question stored at that (internal) node, and determine which child node to go to, based on the answer ;
+
+return CLASSIFY(child, datum);
+
+end
+
+}
+
+## 2. Instantiating the decision tree problem
+
+For this assignment, the problem is to classify points based on their 2D position. Each datapoint has two attributes x represented by an array of size 2, and a binary label y (0 or 1).
+
+A graphical representation of example of a data set looks like this. (For the graphs, the attribute value x[0], is represented as x1 and x[1] as x2.) For those who print out the document in color, the red symbols can be label 0 and the green symbols can be label 1. For those printing in black and white, the (red) disks are label 0 and the (green) ⇥’s are label 1.
+
 ### Datum.java
 
 This class holds the information of a single datapoint. It has two variables, x and y. x is an array containing the attributes and y contains the label.
