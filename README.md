@@ -1,6 +1,6 @@
 # Decision-Tree
 
-From a quick web search, you learn that decision trees are a classical AI technique for classify- ing objects by their properties. One typically refers to object attributes rather than object properties, and one typically refers object labels to say how an object is classified.
+From a quick web search, you learn that decision trees are a classical AI technique for classifying objects by their properties. One typically refers to object attributes rather than object properties, and one typically refers object labels to say how an object is classified.
 
 
 As a concrete example, consider a computer vision system that analyzes surveillance video in a large store and it classifies people seen in the video as being either employees or customers. An example attribute could be the location of the person in the store. Employees tend to spend their time in different places than customers. For example, only employees are supposed to be behind the cash register.
