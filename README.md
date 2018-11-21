@@ -104,3 +104,22 @@ The class also comes with a method toString() which returns a string representat
 ### DataReader.java
 
 This class deals with three things. The method read data() reads a dataset from a csv3, and splits the read dataset into the training and test set, using splitTrainTestData() file. It also has methods that deal with reading and writing of “serialized” decision tree objects.
+
+## DecisionTree.java
+This is the main class which deals with the creation of a decision tree and classification of datapoints using the created decision tree. 
+
+Let us go through the different members and attributes of the class:
+
+• The constructor builds a decision tree by calling the fillDTNode() method on a dataset. It is given a list of data points and a parameter that specifies the minimum number of datapoints that has to be present of a leaf node. This minimum number is used to reduced the chances of overfitting, as discussed above.
+
+• There is a root node field, called rootDTNode, by which other nodes can be accessed.
+
+• There is a subclass class DTNode. This class is used to represent a single node of a deci- sion tree. There are two types of nodes: the internal nodes which define an attribute and a threshold which help in classification, and leaf nodes which determine the labels of those data points whose attributes obey the threshold conditions of the ancestor internal nodes leading up to the leaf node. For this assignment, n = 2 and so each datapoint has an array of size 2 to hold their two attributes.
+
+### The DTNode contains the following members:
+
+– leaf: a boolean variable that indicates whether this node object is a leaf or not.
+
+– label: an integer variable that indicates the label of the node. The label of the node indicates class of a datapoint that reaches that particular leaf node after traversing the tree. This is valid only if the node is a leaf node. The classes for this assignment are simply 0 or 1. 
+
+– attribute: The attribute, (x1 , . . . , xn ) on which the dataset is split in that particular node. The value of the attribute is one of {1, . . . , n}. The attribute value is meaningful only for an internal node.
