@@ -1,5 +1,3 @@
-//name: Zhenzhou(Violet) Wei    ID: 260767913
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.text.*;
