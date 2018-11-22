@@ -41,7 +41,6 @@ public class DecisionTree implements Serializable {
 		DTNode fillDTNode(ArrayList<Datum> datalist) {
 			//using recursion
 
-			//YOUR CODE HERE
 			DTNode new_node = new DTNode();
 			
 			//if labeled data has at least k data items
@@ -176,7 +175,6 @@ public class DecisionTree implements Serializable {
 			//once have a decision tree, you can use it to classify new objects, called the testing phase.
 			//We will use the decision tree to choose a label for the object
 			//This is done by traversing the decision tree from the root to a leaf
-			//YOUR CODE HERE
 			
 			//label only defined if node is a leaf, attribute and threshold are only defined if node is not a leaf
 			
@@ -201,8 +199,6 @@ public class DecisionTree implements Serializable {
 		//at DTNode object passed as the parameter
 		public boolean equals(Object dt2)
 		{
-
-			//YOUR CODE HERE
 			
 			//Using recursion is a simpler way to implement this method
 			
