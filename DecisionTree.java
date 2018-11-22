@@ -49,22 +49,27 @@ public class DecisionTree implements Serializable {
 				//check whether all labels are the same
 				boolean sameLabel = true;
 				
-				for(int i=0; i<datalist.size()-1; i++) {
+				for(int i=0; i<datalist.size()-1; i++) 
+				{
 					sameLabel= (datalist.get(i).y == datalist.get(i+1).y);
-					if(sameLabel == false) {
+					
+					if(sameLabel == false) 
+					{
 						break;
 					}
 				}
 				
 				//if all the data items have the same label
-				if(sameLabel == true) {
+				if(sameLabel == true) 
+				{
 					//create a node with that class label and return it
 					new_node.leaf = true;
 					new_node.label = datalist.get(0).y;
 					return new_node;
 				}
 				//if don't have the same label
-				else { 
+				else 
+				{ 
 					//find the best split
 					new_node.leaf = false;
 					
@@ -88,7 +93,8 @@ public class DecisionTree implements Serializable {
 							
 							for(int k=0; k<datalist.size(); k++) {
 								
-								if(datalist.get(k).x[i] < datalist.get(j).x[i]) {
+								if(datalist.get(k).x[i] < datalist.get(j).x[i]) 
+								{
 									subset_left.add(datalist.get(k));
 								}
 								else {
@@ -128,14 +134,12 @@ public class DecisionTree implements Serializable {
 				
 			}
 			else { //if labeled data doesn't have at least k data items
+				
 				new_node.leaf = true;
 				new_node.label=findMajority(datalist);
 				
 				return new_node;
 			}
-
-				
-			//return this;
 		}
 
 
@@ -179,14 +183,17 @@ public class DecisionTree implements Serializable {
 			//label only defined if node is a leaf, attribute and threshold are only defined if node is not a leaf
 			
 			//if node is a leaf
-			if(this.leaf) {
+			if(this.leaf) 
+			{
 				return this.label;
 			}
 			else {
-				if(xQuery[this.attribute] < threshold) {
+				if(xQuery[this.attribute] < threshold) 
+				{
 					return (this.left).classifyAtNode(xQuery); //recursion
 				}
-				else {
+				else 
+				{
 					return (this.right).classifyAtNode(xQuery); //recursion
 				}
 			}
@@ -206,11 +213,12 @@ public class DecisionTree implements Serializable {
 			boolean left_equal = false;
 			boolean right_equal = false;
 			
-			if(this != null && ((DTNode)dt2) != null) {
+			if(this != null && ((DTNode)dt2) != null) 
+			{
 				
 				// case when the two nodes are both "leaf nodes": labels should be same
-				if(this.leaf && ((DTNode)dt2).leaf) {
-					
+				if(this.leaf && ((DTNode)dt2).leaf) 
+				{	
 					// left and right nodes are null if the node is leaf node
 				    rootEqual = (this.label == ((DTNode)dt2).label);
 				    left_equal = true;
@@ -219,8 +227,8 @@ public class DecisionTree implements Serializable {
 			    }
 			    
 				//case when the two nodes are both "internal nodes": thresholds and attributes should be same.
-				else if((! this.leaf) && (! ((DTNode)dt2).leaf)){
-				
+				else if((! this.leaf) && (! ((DTNode)dt2).leaf))
+				{
 				    rootEqual = (this.attribute == ((DTNode)dt2).attribute) && (this.threshold == ((DTNode)dt2).threshold);
 				    
 				    left_equal = (this.left).equals(((DTNode)dt2).left);  //recursion
